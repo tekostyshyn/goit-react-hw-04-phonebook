@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 import './Form.scss';
 
 const Form = ({ onSubmit }) => {
@@ -52,5 +53,10 @@ const Form = ({ onSubmit }) => {
     </form>
   );
 };
+
+Form.propTypes = {
+  onSubmit: PropTypes.func,
+};
+
 
 export default Form;
