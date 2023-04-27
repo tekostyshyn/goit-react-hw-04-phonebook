@@ -1,0 +1,19 @@
+.filter {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.filter__label {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.filter__input {
+    display: block;
+    padding: 5px;
+    width: 200px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+}
