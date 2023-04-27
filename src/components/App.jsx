@@ -5,11 +5,17 @@ import ContactsList from './ContactsList';
 import Filter from './Filter';
 import './App.scss';
 
-const storedContacts = localStorage.getItem('contacts');
-const parsedContacts = JSON.parse(storedContacts);
+const getDataFromStorage = () => {
+  const storedContacts = localStorage.getItem('contacts');
+  const parsedContacts = JSON.parse(storedContacts);
+  if (!parsedContacts) {
+    return [];
+  }
+  return [...parsedContacts];
+};
 
 export const App = () => {
-  const [contacts, setContacts] = useState([...parsedContacts]);
+  const [contacts, setContacts] = useState(getDataFromStorage());
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
@@ -59,4 +65,3 @@ export const App = () => {
     </div>
   );
 };
-
